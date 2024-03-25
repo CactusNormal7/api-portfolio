@@ -2,10 +2,15 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\PostRepository;
 use Doctrine\ORM\Mapping as ORM;
 
+
+
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[ApiResource()]
+
 class Post
 {
     #[ORM\Id]
@@ -19,10 +24,10 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $slug = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: "text")]
     private ?string $content = null;
 
-    #[ORM\Column(length: 15000)]
+    #[ORM\Column(type: "text")]
     private ?string $full_content = null;
 
     #[ORM\Column]
