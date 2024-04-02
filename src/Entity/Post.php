@@ -30,7 +30,7 @@ class Post
     #[ORM\Column(type: "text")]
     private ?string $full_content = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: "datetime")]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\Column]
